@@ -12,6 +12,7 @@ public class Debt {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private double amount;
+    private String comment;
     private String status = "NỢ ĐẦM ĐÌA";
     private Date date;
     @ManyToOne

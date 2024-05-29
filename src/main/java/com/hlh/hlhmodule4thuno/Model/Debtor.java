@@ -11,6 +11,8 @@ public class Debtor {
     private Long id;
     private String name;
     private Integer age;
+    private String phone;
+    private String address;
     private String image;
     private String status = "ACTIVE";
 
