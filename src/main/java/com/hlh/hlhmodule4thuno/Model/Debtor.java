@@ -1,9 +1,7 @@
-package com.hlh.hlhmodule4thuno.Module;
+package com.hlh.hlhmodule4thuno.Model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
-import java.util.List;
 
 @Entity
 @Data
@@ -12,6 +10,9 @@ public class Debtor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private Integer age;
+    private String image;
     private String status = "ACTIVE";
+
 
 }

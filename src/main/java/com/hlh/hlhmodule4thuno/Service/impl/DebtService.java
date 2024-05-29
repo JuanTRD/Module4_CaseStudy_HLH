@@ -1,6 +1,6 @@
 package com.hlh.hlhmodule4thuno.Service.impl;
 
-import com.hlh.hlhmodule4thuno.Module.Debt;
+import com.hlh.hlhmodule4thuno.Model.Debt;
 import com.hlh.hlhmodule4thuno.Repository.IDebtRepository;
 import com.hlh.hlhmodule4thuno.Service.IDebtService;
 import org.springframework.beans.factory.annotation.Autowired;

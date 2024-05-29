@@ -1,6 +1,6 @@
 package com.hlh.hlhmodule4thuno.Service;
 
-import com.hlh.hlhmodule4thuno.Module.Debt;
+import com.hlh.hlhmodule4thuno.Model.Debt;
 
 import java.util.List;
 
