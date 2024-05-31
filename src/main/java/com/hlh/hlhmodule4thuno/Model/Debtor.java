@@ -10,6 +10,7 @@ public class Debtor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String cccd;
     private Integer age;
     private String phone;
     private String address;

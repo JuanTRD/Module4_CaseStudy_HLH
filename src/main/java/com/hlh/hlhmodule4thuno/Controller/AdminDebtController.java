@@ -38,8 +38,8 @@ public class AdminDebtController {
     @DeleteMapping("{id}")//cap nhat con khoan no da thanh toan
     public ResponseEntity<String> deleteDebt(@PathVariable Long id){
         debtService.remove(id);
-String message = "Deleted";
-return new ResponseEntity<>(message, HttpStatus.OK);
+        String message = "Deleted";
+        return new ResponseEntity<>(message, HttpStatus.OK);
     }
     @GetMapping("/debtors/{id}")//lay ra khoan no cua con no theo id
     public ResponseEntity<List<Debt>> getDebtByDebtor(@PathVariable Long id){

@@ -10,4 +10,6 @@ import java.util.List;
 public interface IDebtorRepository extends JpaRepository<Debtor,Long> {
     List<Debtor> findByNameContaining(String name);
     List<Debtor> findByStatus(String status);
+
+    Debtor findDebtorByCccd(String cccd);
 }

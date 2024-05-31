@@ -13,7 +13,7 @@ public class Debt {
     private Long id;
     private double amount;
     private String comment;
-    private String status = "NỢ ĐẦM ĐÌA";
+    private String status = "ACTIVE";
     private Date date;
     @ManyToOne
     @JoinColumn(name ="debtor_id")

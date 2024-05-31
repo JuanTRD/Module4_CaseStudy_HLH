@@ -23,6 +23,7 @@ public class DebtorService implements IDebtorService {
 
     @Override
     public void save(Debtor debtor) {
+
         debtorRepository.save(debtor);
     }
 
