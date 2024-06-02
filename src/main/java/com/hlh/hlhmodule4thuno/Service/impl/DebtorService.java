@@ -40,4 +40,9 @@ public class DebtorService implements IDebtorService {
     public List<Debtor> findByStatus(String status) {
         return debtorRepository.findByStatus(status);
     }
+
+    @Override
+    public List<Debtor> findByUserId(Long id) {
+        return debtorRepository.findByUserId(id);
+    }
 }

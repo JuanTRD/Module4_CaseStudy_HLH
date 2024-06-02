@@ -16,5 +16,9 @@ public class Debtor {
     private String image;
     private String status = "ACTIVE";
 
+    @ManyToOne
+    @JoinColumn(name ="user_id")
+    private User user;
+
 
 }

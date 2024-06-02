@@ -1,7 +1,10 @@
 package com.hlh.hlhmodule4thuno.Controller;
 
 import com.hlh.hlhmodule4thuno.Model.Debtor;
+import com.hlh.hlhmodule4thuno.Model.User;
 import com.hlh.hlhmodule4thuno.Repository.IDebtorRepository;
+import com.hlh.hlhmodule4thuno.Service.UserService;
+import com.hlh.hlhmodule4thuno.Service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,10 +19,14 @@ import java.util.List;
 public class UserDebtorController {
     @Autowired
     private IDebtorRepository debtorRepository;
+    @Autowired
+    private UserServiceImpl userServiceImpl;
+    @GetMapping("")//lay ra thong tin toan bo con no cua current user
+    public ResponseEntity<List<Debtor>> getAllByUser(){
+        User user = userServiceImpl.getCurrentUser();
+        Long id = user.getId();
+        List<Debtor> list = debtorRepository.findByUserId(id);
 
-    @GetMapping("")//lay ra thong tin toan bo con no
-    public ResponseEntity<List<Debtor>> getAll(){
-        List<Debtor> list = debtorRepository.findAll();
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
     @PostMapping("")//chinh sua thong tin con no
