@@ -17,5 +17,8 @@ public class Debtor {
     private String image;
     private String status = "ACTIVE";
 
+    @OneToOne
+    private User user;
+
 
 }
