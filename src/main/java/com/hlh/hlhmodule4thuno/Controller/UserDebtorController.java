@@ -41,4 +41,9 @@ public class UserDebtorController {
         List<Debtor> list = debtorRepository.findByStatus(status);
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
+    @GetMapping("/{id}")
+    public ResponseEntity<Debtor> getDebtorById(@PathVariable Long id){
+        Debtor debtor = debtorRepository.findById(id).get();
+        return new ResponseEntity<>(debtor, HttpStatus.OK);
+    }
 }
