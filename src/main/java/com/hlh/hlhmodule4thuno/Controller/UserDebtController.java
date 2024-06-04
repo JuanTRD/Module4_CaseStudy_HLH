@@ -12,7 +12,7 @@ import java.util.List;
 
 @Controller
 @CrossOrigin("*")
-@RequestMapping("/user/debts")
+@RequestMapping("/userDebts")
 public class UserDebtController {
 
     @Autowired

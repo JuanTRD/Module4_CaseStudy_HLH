@@ -15,7 +15,7 @@ import java.util.List;
 
 @Controller
 @CrossOrigin("*")
-@RequestMapping("/user/debtors")
+@RequestMapping("/userDebtors")
 public class UserDebtorController {
     @Autowired
     private IDebtorRepository debtorRepository;

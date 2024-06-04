@@ -12,30 +12,30 @@ import java.util.List;
 
 @Controller
 @CrossOrigin("*")
-@RequestMapping("/admin")
+@RequestMapping("debts")
 public class AdminDebtController {
     @Autowired
     private IDebtService debtService;
 
-    @GetMapping("/debts")//lay toan bo khoan no
+    @GetMapping("")//lay toan bo khoan no
     public ResponseEntity<List<Debt>> getAllDebts() {
         List<Debt> list = debtService.findAll();
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
-    @PostMapping("/debts")//them khoan no moi
+    @PostMapping("")//them khoan no moi
     public ResponseEntity<String> addDebt(@RequestBody Debt debt){
         debtService.save(debt);
         String message = "Added";
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
-    @PutMapping("/debts/{id}")//chinh sua thong tin khoan no
+    @PutMapping("{id}")//chinh sua thong tin khoan no
     public ResponseEntity<String> editDebt(@PathVariable Long id, @RequestBody Debt debt){
         debt.setId(id);
         debtService.save(debt);
         String message = "Edited";
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
-    @DeleteMapping("/debts/{id}")//cap nhat con khoan no da thanh toan
+    @DeleteMapping("{id}")//cap nhat con khoan no da thanh toan
     public ResponseEntity<String> deleteDebt(@PathVariable Long id){
         debtService.remove(id);
         String message = "Deleted";
