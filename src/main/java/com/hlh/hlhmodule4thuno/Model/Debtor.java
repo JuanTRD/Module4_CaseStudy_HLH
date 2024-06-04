@@ -3,6 +3,9 @@ package com.hlh.hlhmodule4thuno.Model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+import java.util.Set;
+
 @Entity
 @Data
 public class Debtor {
@@ -16,7 +19,6 @@ public class Debtor {
     private String address;
     private String image;
     private String status = "ACTIVE";
-
     @OneToOne
     private User user;
 
