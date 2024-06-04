@@ -27,7 +27,7 @@ public class DebtService implements IDebtService {
 
     @Override
     public void save(Debt debt) {
-        debt.setDebtor(debtorRepository.findDebtorByCccd(debt.getDebtor().getCccd()));
+        debt.setDebtor(debtorRepository.findByCccd(debt.getDebtor().getCccd()));
         debtRepository.save(debt);
     }
 
