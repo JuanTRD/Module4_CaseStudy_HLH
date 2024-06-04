@@ -2,6 +2,7 @@ package com.hlh.hlhmodule4thuno.Service.impl;
 
 import com.hlh.hlhmodule4thuno.Model.Debt;
 import com.hlh.hlhmodule4thuno.Repository.IDebtRepository;
+import com.hlh.hlhmodule4thuno.Repository.IDebtorRepository;
 import com.hlh.hlhmodule4thuno.Service.IDebtService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,9 @@ import java.util.List;
 public class DebtService implements IDebtService {
     @Autowired
     private IDebtRepository debtRepository;
+
+    @Autowired
+    IDebtorRepository debtorRepository;
     @Override
     public List<Debt> findAll() {
         return debtRepository.findAll();
@@ -23,6 +27,7 @@ public class DebtService implements IDebtService {
 
     @Override
     public void save(Debt debt) {
+        debt.setDebtor(debtorRepository.findDebtorByCccd(debt.getDebtor().getCccd()));
         debtRepository.save(debt);
     }
 

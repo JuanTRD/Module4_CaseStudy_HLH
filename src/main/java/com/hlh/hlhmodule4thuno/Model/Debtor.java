@@ -10,6 +10,7 @@ public class Debtor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String cccd;
     private Integer age;
     private String phone;
     private String address;
@@ -17,8 +18,7 @@ public class Debtor {
     private String cccd;
     private String status = "ACTIVE";
 
-    @ManyToOne
-    @JoinColumn(name ="user_id")
+    @OneToOne
     private User user;
 
 
