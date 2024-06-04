@@ -39,4 +39,9 @@ return new ResponseEntity<>(list, HttpStatus.OK);
         Debtor debtor = debtorRepository.findById(id).get();
         return new ResponseEntity<>(debtor, HttpStatus.OK);
     }
+    @GetMapping("/cccd")
+    public ResponseEntity<Debtor> getDebtorByCccd(@RequestParam String cccd){
+        Debtor debtor = debtorRepository.findByCccd(cccd);
+        return new ResponseEntity<>(debtor,HttpStatus.OK);
+    }
 }

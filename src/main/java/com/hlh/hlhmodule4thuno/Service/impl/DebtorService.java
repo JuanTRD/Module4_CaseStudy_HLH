@@ -45,4 +45,10 @@ public class DebtorService implements IDebtorService {
     public List<Debtor> findByUserId(Long id) {
         return debtorRepository.findByUserId(id);
     }
+
+    @Override
+    public Debtor findByCccd(String cccd) {
+        return debtorRepository.findByCccd(cccd);
+    }
+
 }

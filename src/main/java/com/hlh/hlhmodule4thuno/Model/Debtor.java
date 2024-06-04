@@ -14,6 +14,7 @@ public class Debtor {
     private String phone;
     private String address;
     private String image;
+    private String cccd;
     private String status = "ACTIVE";
 
     @ManyToOne
