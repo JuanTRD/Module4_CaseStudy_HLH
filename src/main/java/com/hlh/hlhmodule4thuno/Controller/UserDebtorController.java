@@ -39,6 +39,12 @@ public class UserDebtorController {
     public ResponseEntity<List<Debtor>> getAllByStatus(){
         String status = "ACTIVE";
         List<Debtor> list = debtorRepository.findByStatus(status);
+        for (int i = 0; i < list.size();i++){
+            if(list.get(i).getUser() != null){
+                list.remove(list.get(i));
+                i--;
+            }
+        }
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
     @GetMapping("/{id}")

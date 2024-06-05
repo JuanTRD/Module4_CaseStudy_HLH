@@ -20,6 +20,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -53,7 +54,12 @@ public class UserController {
         Iterable<User> users = userService.findAll();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
-
+    @GetMapping("/admin/alluser")
+    public ResponseEntity<List<User>> getAllUserByAdmin() {
+        List<User> users = userService.findAllUser();
+        System.out.println(users.toArray());
+        return new ResponseEntity<>(users, HttpStatus.OK);
+    }
     @PostMapping("/register")
     public ResponseEntity<User> createUser(@RequestBody User user, BindingResult bindingResult) {
         if (bindingResult.hasFieldErrors()) {
